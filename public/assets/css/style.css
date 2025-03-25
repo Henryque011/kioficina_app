@@ -27,6 +27,7 @@
     --background: #212121;
     --yellow: #FFFF00;
     --gold: #FFC107;
+    --red: #DC3545;
     --sofast: 'Sofast';
     --pace: 'PACE';
 }
@@ -108,6 +109,71 @@ header {
                         font-family: var(--pace);
                     }
                 }
+            }
+        }
+    }
+}
+
+.menu {
+    .space {
+        padding: 0px;
+    }
+
+    .site {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h2 {
+            font-family: var(--pace);
+            color: var(--yellow);
+            align-items: center;
+            text-align: center;
+            font-size: 21pt;
+            text-transform: uppercase;
+            padding: 25px 40px 15px 40px;
+        }
+
+        p {
+            text-transform: uppercase;
+            font-family: var(--pace);
+            color: white;
+            align-items: center;
+            text-align: center;
+            font-size: 14pt;
+            text-transform: uppercase;
+        }
+
+        .space {
+            padding: 10px;
+        }
+
+        .box_links {
+            margin: 10px;
+
+            button {
+                border-radius: 5px;
+                border: none;
+                width: 225px;
+                height: 40px;
+                font-family: var(--pace);
+                color: #FFFFFF;
+                background: var(--gold);
+            }
+        }
+
+        .box_links-sair {
+            margin: 10px;
+
+            button {
+                border-radius: 5px;
+                border: none;
+                width: 225px;
+                height: 40px;
+                font-family: var(--pace);
+                color: #FFFFFF;
+                background: var(--red);
             }
         }
     }
