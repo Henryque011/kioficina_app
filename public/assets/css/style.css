@@ -114,6 +114,16 @@ header {
     }
 }
 
+h2 {
+    font-family: var(--pace);
+    color: var(--yellow);
+    align-items: center;
+    text-align: center;
+    font-size: 21pt;
+    text-transform: uppercase;
+    padding: 25px 40px 15px 40px;
+}
+
 .menu {
     .space {
         padding: 0px;
@@ -125,15 +135,7 @@ header {
         align-items: center;
         flex-direction: column;
 
-        h2 {
-            font-family: var(--pace);
-            color: var(--yellow);
-            align-items: center;
-            text-align: center;
-            font-size: 21pt;
-            text-transform: uppercase;
-            padding: 25px 40px 15px 40px;
-        }
+
 
         p {
             text-transform: uppercase;
@@ -175,6 +177,44 @@ header {
                 color: #FFFFFF;
                 background: var(--red);
             }
+        }
+    }
+}
+
+.agendamento {
+    .site {
+        .space {
+            padding: 50px;
+        }
+
+        .form-select, 
+        .form-control {
+            font-size: 12px;
+            padding: 6px; 
+        }
+
+        .form-conteiner {
+            width: 95%;
+            margin: 50px auto;
+            background: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: var(--pace);
+            font-size: 12pt;
+        }
+
+        .form-label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn-agendar {
+            background-color:var(--gold);
+            color: #FFFFFF;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
         }
     }
 }
