@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'PACE';
+    src: url('../fonts/pace-racing-car/PACE.woff2') format('woff2'),
+        url('../fonts/pace-racing-car/PACE.woff') format('woff'),
+        url('../fonts/pace-racing-car/PACE.ttf') format('truetype'),
+        url('../fonts/pace-racing-car/PACE.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sofast';
+    src: url('../fonts/sofast-racing-car/Sofast.woff2') format('woff2'),
+        url('../fonts/sofast-racing-car/Sofast.woff') format('woff'),
+        url('../fonts/sofast-racing-car/Sofast.ttf') format('truetype'),
+        url('../fonts/sofast-racing-car/Sofast.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.site {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+:root {
+    --background: #212121;
+    --sofast: 'Sofast';
+    --pace: 'PACE';
+}
+
+body {
+    background: var(--background);
+    font-family: sofas;
+}
