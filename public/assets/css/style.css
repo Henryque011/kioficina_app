@@ -23,19 +23,92 @@
     margin: 0;
 }
 
-.site {
-    margin: 0 auto;
-    max-width: 1200px;
-    width: 100%;
-}
-
 :root {
     --background: #212121;
+    --yellow: #FFFF00;
+    --gold: #FFC107;
     --sofast: 'Sofast';
     --pace: 'PACE';
 }
 
 body {
     background: var(--background);
-    font-family: sofas;
+    height: 100vh;
+    width: 100%;
+}
+
+.site {
+    margin: 0 auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+.space {
+    padding: 30px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    a img {
+        width: 225px;
+        padding: 70px 0 0 0;
+    }
+}
+
+.login {
+    .site {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h1 {
+            font-family: var(--pace);
+            color: var(--yellow);
+            align-items: center;
+            text-align: center;
+            font-size: 21pt;
+            text-transform: uppercase;
+        }
+
+        .space {
+            padding: 15px;
+        }
+
+        .box {
+            margin: 20px 0 0 0;
+            border-radius: 10px;
+            background: #FFFFFF;
+            width: 95%;
+            height: 250px;
+
+            .form-group {
+                padding: 5px;
+                margin: 20px 0 0 0;
+
+                label {
+                    font-family: var(--pace);
+                }
+
+                .form-button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    margin: 20px 0 0 0;
+
+                    button {
+                        background: var(--gold);
+                        border: none;
+                        width: 95%;
+                        font-family: var(--pace);
+                    }
+                }
+            }
+        }
+    }
 }
