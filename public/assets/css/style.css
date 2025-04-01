@@ -442,3 +442,99 @@ h2 {
         }
     }
 }
+
+.perfil {
+    .site {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h2 {
+            margin-top: 2px;
+        }
+
+        .profile-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid yellow;
+            margin: 5x;
+        }
+
+        .add-icon {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: yellow;
+            color: black;
+            border-radius: 50%;
+            padding: 5px;
+            font-size: 18px;
+        }
+
+        .container {
+            margin-top: 10px;
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            height: 530px;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mb-2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-style: italic;
+            font-family: var(--sofast);
+            align-items: center;
+            text-align: center;
+            font-size: 10pt;
+        }
+
+        .form-control {
+            width: 350px;
+        }
+
+        .btn-custom {
+            background-color: var(--gold);
+            font-family: var(--sofast);
+            color: white;
+            font-weight: bold;
+            border: none;
+            width: 100%;
+        }
+
+        .button-servico {
+            background-color: var(--gold);
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-family: var(--sofast);
+
+            a {
+                text-decoration: none;
+                color: white;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}
