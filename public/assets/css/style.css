@@ -25,9 +25,13 @@
 
 :root {
     --background: #212121;
+    --box_status: #4B4B4B;
+    --bg_gray: #383838;
     --yellow: #FFFF00;
     --gold: #FFC107;
     --red: #DC3545;
+    --gren: #28A745;
+    --blue: #2A95D3;
     --sofast: 'Sofast';
     --pace: 'PACE';
 }
@@ -46,6 +50,12 @@ body {
 
 .space {
     padding: 30px;
+}
+
+.destaque {
+    font-weight: bolder;
+    color: white;
+    font-size: 16pt;
 }
 
 header {
@@ -187,10 +197,10 @@ h2 {
             padding: 50px;
         }
 
-        .form-select, 
+        .form-select,
         .form-control {
             font-size: 12px;
-            padding: 6px; 
+            padding: 6px;
         }
 
         .form-conteiner {
@@ -210,11 +220,225 @@ h2 {
         }
 
         .btn-agendar {
-            background-color:var(--gold);
+            background-color: var(--gold);
             color: #FFFFFF;
             font-weight: bold;
             text-transform: uppercase;
             border: none;
+        }
+    }
+}
+
+.lista {
+    .site {
+        display: flex;
+        justify-content: center;
+
+        .box_list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 35px;
+            background-color: var(--bg_gray);
+            width: 95%;
+            height: 615px;
+            border-radius: 10px;
+
+            .box_status {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background: var(--box_status);
+                width: 90%;
+                height: 130px;
+                border-radius: 10px;
+
+                p {
+                    color: white;
+                    align-items: center;
+                    text-align: center;
+                    font-size: 14pt;
+                    width: 100%;
+                }
+
+                .status_concluido {
+                    margin-top: 15px;
+                    font-family: var(--sofast);
+                    color: var(--gren);
+                    font-weight: bold;
+                }
+
+                .status_cancelado {
+                    margin-top: 15px;
+                    font-family: var(--sofast);
+                    color: var(--red);
+                    font-weight: bold;
+                }
+
+                .status_analise {
+                    margin-top: 15px;
+                    font-family: var(--sofast);
+                    color: var(--blue);
+                    font-weight: bold;
+                }
+            }
+
+            .btn {
+                margin-top: 20px;
+                border-radius: 5px;
+                width: 120px;
+                text-decoration: none;
+                font-family: var(--pace);
+                align-items: center;
+                text-align: center;
+                color: white;
+                background-color: var(--gold);
+            }
+        }
+    }
+}
+
+.lista_serv {
+    .site {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .box_list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 35px;
+            background-color: var(--bg_gray);
+            width: 95%;
+            height: 450px;
+            border-radius: 10px;
+
+            .box_status {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background: var(--box_status);
+                width: 95%;
+                height: 250px;
+                border-radius: 10px;
+
+                p {
+                    color: white;
+                    align-items: center;
+                    text-align: center;
+                    font-size: 16pt;
+                    width: 100%;
+                }
+
+                .destaque {
+                    font-size: 18pt;
+                    font-weight: bolder;
+                }
+
+                .status_servico {
+                    margin-top: 15px;
+                    font-family: var(--sofast);
+                    color: var(--red);
+                    font-weight: bold;
+                }
+            }
+
+            .button-servico {
+                background-color: var(--gold);
+                padding: 10px 20px;
+                border: none;
+                font-size: 16px;
+                font-weight: bold;
+                border-radius: 5px;
+                margin-top: 30px;
+                font-family: var(--sofast);
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+}
+
+.depoimento {
+    .site {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        .container {
+            margin-top: 10px;
+            background-color: white;
+            border-radius: 10px;
+            width: 95%;
+            height: 350px;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .fw-bold {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+                font-family: var(--sofast);
+                align-items: center;
+                text-align: center;
+            }
+
+            .form-control {
+                width: 350px;
+            }
+
+            textarea.form-control {
+                resize: none;
+            }
+
+            .stars i {
+                font-size: 24px;
+                cursor: pointer;
+                color: #808080;
+            }
+
+            .stars i.checked {
+                color: var(--gold);
+            }
+
+            .btn-custom {
+                font-family: var(--sofast);
+                color: white;
+                background-color: var(--gold);
+            }
+        }
+
+        .btn_cust {
+            margin-top: 10px;
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            font-family: var(--pace);
+            color: white;
+            background-color: var(--gold);
         }
     }
 }
