@@ -1,8 +1,4 @@
-<?php
 
-require_once('../../config/config.php');
-$titulo = 'Agendamento - ki-oficina';
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
