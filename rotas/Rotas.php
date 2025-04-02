@@ -11,13 +11,15 @@ class Rotas
         }
 
         $paremetro = array();
-        // Verifica se a URL não esrá vazai e não é a raiz
+
+        // Verifica se a URL não esrá vazia e não é a raiz0        
         if (!empty($url) && $url != '/') {
 
             $url = explode('/', $url);
             array_shift(($url)); //Remover a barra
 
-            $controladorAtual = ucfirst($url[0]) . 'controller'; //primerio caracter em letra maiuscula
+            $controladorAtual = ucfirst($url[0]) . 'Controller'; //primerio caracter em letra maiuscula
+
             array_shift($url); //Remover a primeira casa do vetor
 
             if (isset($url[0]) && !empty($url[0])) {
@@ -26,6 +28,7 @@ class Rotas
             } else {
                 $acaoAtual = 'index';
             }
+
 
             //Se ainda tiver algum elemento na URL será considerad parâmetro
             if (count($url) > 0) {
@@ -43,6 +46,7 @@ class Rotas
             $controladorAtual = 'ErroController';
             $acaoAtual = 'index';
         }
+
         //criar uma instância para o controlador atual
         $controler = new $controladorAtual;
 
