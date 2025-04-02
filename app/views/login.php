@@ -1,19 +1,15 @@
-<?php
-// apagar php das views
-require_once('../config/config.php');
-$titulo = 'Login - ki-oficina';
-?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <?php
-require_once('app/views/template/head.php')
+require_once('template/head.php')
 ?>
 
 <body>
     <header>
-        <a href="index.html"><img src="<?php echo BASE_URL; ?>public/assets/img/logo-kioficina.png" alt="logo-kioficina"></a>
+        <a href="index.html"><img src="<?php echo BASE_URL; ?>assets/img/logo-kioficina.png" alt="logo-kioficina"></a>
     </header>
     <div class="space"></div>
     <section class="login">
