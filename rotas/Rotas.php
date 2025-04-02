@@ -12,7 +12,7 @@ class Rotas
 
         $paremetro = array();
 
-        // Verifica se a URL não esrá vazia e não é a raiz0        
+        // Verifica se a URL não esrá vazia e não é a raiz     
         if (!empty($url) && $url != '/') {
 
             $url = explode('/', $url);
@@ -48,9 +48,9 @@ class Rotas
         }
 
         //criar uma instância para o controlador atual
-        $controler = new $controladorAtual;
+        $controller = new $controladorAtual;
 
         //chamar a ação dentro do controlador e passar o prametro
-        call_user_func_array(array($controler, $acaoAtual), $paremetro);
+        call_user_func_array(array($controller, $acaoAtual), $paremetro);
     }
 }
