@@ -1,8 +1,4 @@
-<?php
 
-require_once('../../config/config.php');
-$titulo = 'Depoimento - ki-oficina';
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,7 +28,8 @@ require_once('app/views/template/head.php')
                 </div>
                 <button class="btn btn-custom w-100">Enviar Depoimento</button>
             </div>
-            <button class="btn_cust">Voltar</button>
+            <button class="button-servico"><a href="<?php echo BASE_URL; ?>index.php?url=menu">VOLTAR</a></button>
+            <!-- <button class="btn_cust">Voltar</button> -->
         </article>
     </section>
 
