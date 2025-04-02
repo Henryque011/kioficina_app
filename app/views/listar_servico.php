@@ -1,8 +1,4 @@
-<?php
 
-require_once('../../config/config.php');
-$titulo = 'Listar servicos - ki-oficina';
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,7 +22,7 @@ require_once('app/views/template/head.php')
                     <p><span class="destaque">Total:</span> R$ 1.800,00</p>
                     <p class="status_servico">STATUS: EM ANÁLISE</p>
                 </div>
-                <button class="button-servico"><a href="menu.html">VOLTAR</a></button>
+                <button class="button-servico"><a href="<?php echo BASE_URL; ?>index.php?url=menu">VOLTAR</a></button>
             </div>
         </article>
     </section>
