@@ -24,19 +24,19 @@ require_once('app/views/template/head.php')
             <p>Olá, joão silva!</p>
             <div class="space"></div>
             <div class="box_links">
-                <a href="agendamento.html"><button>agendamento</button></a>
+                <a href="<?php echo BASE_URL; ?>index.php?url=agendamento"><button>agendamento</button></a>
             </div>
             <div class="box_links">
-                <a href="lista_agendameto.html"><button>listar serviço</button></a>
+                <a href="<?php echo BASE_URL; ?>index.php?url=listar servico"><button>listar serviço</button></a>
             </div>
             <div class="box_links">
-                <a href="#"><button>Depoimentos</button></a>
+                <a href="<?php echo BASE_URL; ?>index.php?url=depoimento"><button>Depoimentos</button></a>
             </div>
             <div class="box_links">
-                <a href="#"><button>Perfil</button></a>
+                <a href="<?php echo BASE_URL; ?>index.php?url=perfil"><button>Perfil</button></a>
             </div>
             <div class="box_links-sair">
-                <a href="#"><button>Sair</button></a>
+                <a href="<?php echo BASE_URL; ?>index.php?url=login"><button>Sair</button></a>
             </div>
         </article>
     </section>
