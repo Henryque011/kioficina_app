@@ -1,6 +1,6 @@
 <?php
-
-require_once('config/config.php');
+// apagar php das views
+require_once('../config/config.php');
 $titulo = 'Login - ki-oficina';
 ?>
 
@@ -21,15 +21,15 @@ require_once('app/views/template/head.php')
             <h1>Login</h1>
             <div class="space"></div>
             <div class="box">
-                <form>
+                <form action="<?php echo BASE_URL; ?>index.php?url=menu" method="POST">
                     <div class="form-group">
                         <label for="exampleInputEmail1">E-mail:</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        <input type="email" class="form-control" id="email" name="email" required aria-describedby="emailHelp"
                             placeholder="">
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">senha:</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                            <input type="password" class="form-control" id="senha" name="senha" required placeholder="">
                         </div>
                         <div class="form-button">
                             <button type="submit" class="btn btn-primary">Entrar</button>
