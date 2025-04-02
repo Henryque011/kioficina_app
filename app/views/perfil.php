@@ -1,8 +1,3 @@
-<?php
-
-require_once('../../config/config.php');
-$titulo = 'Meu perfil - ki-oficina';
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -63,7 +58,7 @@ require_once('app/views/template/head.php')
                 </form>
                 <button type="submit" class="btn btn-custom mt-2">Salvar Alterações</button>
             </div>
-            <button class="button-servico"><a href="menu.html">VOLTAR</a></button>
+            <button class="button-servico"><a href="<?php echo BASE_URL; ?>index.php?url=menu">VOLTAR</a></button>
         </article>
     </section>
 
