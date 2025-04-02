@@ -1,8 +1,3 @@
-<?php
-
-require_once('../../config/config.php');
-$titulo = 'Listar agendamento- ki-oficina';
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,7 +29,7 @@ require_once('app/views/template/head.php')
                     <p><span class="destaque">Data Agenda:</span> 28/02/2025 11:00</p>
                     <p class="status_analise">STATUS: cancelado</p>
                 </div>
-                <a href="menu.html" class="btn">Voltar</a>
+                <a href="<?php echo BASE_URL; ?>index.php?url=menu" class="btn">Voltar</a>
             </div>
         </article>
     </section>
