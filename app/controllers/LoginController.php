@@ -7,7 +7,7 @@ class LoginController extends Controller
 
         $dados = array();
         $dados['titulo'] = 'kiOficina - Login';
-        
+
         $this->carregarViews('login', $dados);
     }
 
@@ -20,5 +20,6 @@ class LoginController extends Controller
         //fazer a requisiçã da API DE LOGIN
         $url = BASE_API . "login?email_cliente=$email&senha_cliente=$senha";
         $response = file_get_contents($url);
+        $data = json_decode($response, true);
     }
 }
