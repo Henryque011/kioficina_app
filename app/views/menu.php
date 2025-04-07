@@ -7,7 +7,7 @@ $titulo = 'Menu Principal - ki-oficina';
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<?php 
+<?php
 require_once('app/views/template/head.php')
 ?>
 
@@ -21,13 +21,13 @@ require_once('app/views/template/head.php')
         <div class="space"></div>
         <article class="site">
             <h2>Bem vindo á ki-oficina!</h2>
-            <p>Olá, joão silva!</p>
+            <p>Olá, <?php echo $nome_cliente ?>!</p>
             <div class="space"></div>
             <div class="box_links">
                 <a href="<?php echo BASE_URL; ?>index.php?url=agendamento"><button>agendamento</button></a>
             </div>
             <div class="box_links">
-                <a href="<?php echo BASE_URL; ?>index.php?url=listar servico"><button>listar serviço</button></a>
+                <a href="<?php echo BASE_URL; ?>index.php?url=listar_servico"><button>listar serviço</button></a>
             </div>
             <div class="box_links">
                 <a href="<?php echo BASE_URL; ?>index.php?url=depoimento"><button>Depoimentos</button></a>
