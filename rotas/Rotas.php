@@ -29,7 +29,6 @@ class Rotas
                 $acaoAtual = 'index';
             }
 
-
             //Se ainda tiver algum elemento na URL será considerad parâmetro
             if (count($url) > 0) {
                 $parametro = $url;
