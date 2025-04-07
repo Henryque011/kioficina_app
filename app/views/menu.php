@@ -14,7 +14,7 @@ require_once('app/views/template/head.php')
 
 <body>
     <header>
-        <a href="index.html"><img src="public/assets/img/logo-kioficina.png" alt="logo-kioficina"></a>
+        <a href="index.php"><img src="public/assets/img/logo-kioficina.png" alt="logo-kioficina"></a>
     </header>
 
     <section class="menu">
