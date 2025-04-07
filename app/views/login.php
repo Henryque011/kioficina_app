@@ -7,7 +7,7 @@ require_once('template/head.php')
 
 <body>
     <header>
-        <a href="index.html"><img src="<?php echo BASE_URL; ?>assets/img/logo-kioficina.png" alt="logo-kioficina"></a>
+        <a href="index.php"><img src="<?php echo BASE_URL; ?>assets/img/logo-kioficina.png" alt="logo-kioficina"></a>
     </header>
     <div class="space"></div>
     <section class="login">
