@@ -8,6 +8,6 @@ class Controller
     {
         extract($dados);
 
-        require_once '..app/views/' . $views . '.php';
+        require_once '../app/views/' . $views . '.php';
     }
 }
