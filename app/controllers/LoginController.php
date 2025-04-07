@@ -10,4 +10,14 @@ class LoginController extends Controller
         
         $this->carregarViews('login', $dados);
     }
+
+    //metodo de autenticação
+    public function autenticar()
+    {
+        $email = $_POST['email'] ?? null;
+        $senha = $_POST['senha'] ?? null;
+
+        //fazer a requisiçã da API DE LOGIN
+        $url = "";
+    }
 }
