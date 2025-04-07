@@ -32,7 +32,7 @@ class LoginController extends Controller
             $_SESSION['id_cliente'] = $id_cliente;
             header("location: " . BASE_URL . "index.php?url=menu");
             exit;
-        }else {
+        } else {
             header("location: " . BASE_URL . "index.php?url=login");
             exit;
         }
