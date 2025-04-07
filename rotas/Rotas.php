@@ -10,7 +10,7 @@ class Rotas
             $url .= $_GET['url'];
         }
 
-        $paremetro = array();
+        $parametro = array();
 
         // Verifica se a URL não esrá vazia e não é a raiz     
         if (!empty($url) && $url != '/') {
@@ -32,7 +32,7 @@ class Rotas
 
             //Se ainda tiver algum elemento na URL será considerad parâmetro
             if (count($url) > 0) {
-                $paremetro = $url;
+                $parametro = $url;
             }
         } else {
             $controladorAtual = 'LoginController';
@@ -51,6 +51,6 @@ class Rotas
         $controller = new $controladorAtual;
 
         //chamar a ação dentro do controlador e passar o prametro
-        call_user_func_array(array($controller, $acaoAtual), $paremetro);
+        call_user_func_array(array($controller, $acaoAtual), $parametro);
     }
 }
