@@ -18,6 +18,7 @@ class LoginController extends Controller
         $senha = $_POST['senha'] ?? null;
 
         //fazer a requisiçã da API DE LOGIN
-        $url = BASE_API . ;
+        $url = BASE_API . "login?email_cliente=$email&senha_cliente=$senha";
+        $response = file_get_contents($url);
     }
 }
