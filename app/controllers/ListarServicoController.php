@@ -6,8 +6,8 @@ class ListarServicoControllerController extends Controller
     {
 
         $dados = array();
-        $dados['titulo'] = 'kiOficina - listar servico';
+        $dados['titulo'] = 'kiOficina - listar_servico';
         
-        $this->carregarViews('lsitar servico', $dados);
+        $this->carregarViews('lsitar_servico', $dados);
     }
 }
