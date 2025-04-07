@@ -2,7 +2,7 @@
 define('BASE_URL', 'http://localhost/kioficina_app/public/');
 
 // definir uma API base 
-define('BASEE_API', 'https://360criativo.com.br/api/');
+define('BASE_API', 'https://360criativo.com.br/api/');
 
 //Sisitema para carregametno automatico das classes
 spl_autoload_register(function ($class) {
