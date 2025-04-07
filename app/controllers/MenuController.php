@@ -6,7 +6,7 @@ class MenuController extends Controller
     {
 
         if (!isset($_SESSION['id_cliente'])) {
-            header("Location: " . BASE_URL . "index.php?url=login2");
+            header("Location: " . BASE_URL . "index.php?url=login");
             exit;
         }
 
@@ -14,7 +14,7 @@ class MenuController extends Controller
 
         if (!$clienteId) {
             session_destroy();
-            header("Location: " . BASE_URL . "index.php?url=login2");
+            header("Location: " . BASE_URL . "index.php?url=login");
             exit;
         }
 
