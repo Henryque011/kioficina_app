@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,7 +15,7 @@ require_once('template/head.php')
             <h1>Login</h1>
             <div class="space"></div>
             <div class="box">
-                <form action="<?php echo BASE_URL; ?>index.php?url=menu" method="POST">
+                <form action="<?php echo BASE_URL; ?>index.php?url=login/autenticar" method="POST">
                     <div class="form-group">
                         <label for="exampleInputEmail1">E-mail:</label>
                         <input type="email" class="form-control" id="email" name="email" required aria-describedby="emailHelp"
