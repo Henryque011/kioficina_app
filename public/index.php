@@ -1,5 +1,4 @@
 <?php
-
 // require_once('../rotas/Rotas.php');
 
 require_once('../config/config.php');
