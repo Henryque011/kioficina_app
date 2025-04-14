@@ -55,7 +55,7 @@ class LoginController extends Controller
                 exit;
             }
         } else {
-            echo "login Inválido";
+            echo "login Inválido - ";
         }
     }
 }
