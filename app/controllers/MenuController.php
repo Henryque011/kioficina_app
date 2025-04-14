@@ -22,15 +22,16 @@ class MenuController extends Controller
         // buscar cliente na api
         $url = BASE_API  . "cliente/" . $dadosToken['id'];
 
-       // Reconhecimento da chave(Inicializa uma sessão cURL)
+        // Reconhecimento da chave(Inicializa uma sessão cURL)
         $ch = curl_init($url);
 
         // Definir que o conteudo venha com a string
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [ 
-            'authorization: Bearer '.$_SESSION['token']
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'authorization: Bearer ' . $_SESSION['token']
         ]);
+        
         // recebe os dados dessa solicitação
         $response = curl_exec($ch);
 
@@ -40,7 +41,7 @@ class MenuController extends Controller
         // Encerra a sessão Curl
         curl_close($ch);
 
-        if($statusCode != 200){
+        if ($statusCode != 200) {
             echo "Erro ao buscar cliente na API.\n
             Código HTTP: $statusCode";
         }
