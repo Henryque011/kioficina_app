@@ -21,7 +21,7 @@ class ApiController extends Controller
         $dados['titulo'] = 'Área de Atuação - Ki Oficina';
 
 
-        $this->carregarViews('api',$dados);
+        $this->carregarViews('api', $dados);
     }
 
     /**
