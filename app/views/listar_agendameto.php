@@ -17,7 +17,7 @@ require_once('app/views/template/head.php')
                     <p><span class="destaque">Data Agenda:</span> 29/08/2024 11:00</p>
                     <p class="status_concluido">STATUS: concluído</p>
                 </div>
-                <div class="box_status">
+                <!-- <div class="box_status">
                     <p><span class="destaque">Veículo:</span> Honda Motor Co. Ltd. - Honda Civic</p>
                     <p><span class="destaque">Funcionário:</span> Juliana Mendes</p>
                     <p><span class="destaque">Data Agenda:</span> 28/02/2025 11:00</p>
@@ -28,7 +28,7 @@ require_once('app/views/template/head.php')
                     <p><span class="destaque">Funcionário:</span> Juliana Mendes</p>
                     <p><span class="destaque">Data Agenda:</span> 28/02/2025 11:00</p>
                     <p class="status_analise">STATUS: cancelado</p>
-                </div>
+                </div> -->
                 <a href="<?php echo BASE_URL; ?>index.php?url=menu" class="btn">Voltar</a>
             </div>
         </article>
