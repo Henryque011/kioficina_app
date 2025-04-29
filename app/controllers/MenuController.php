@@ -10,7 +10,7 @@ class MenuController extends Controller
             exit;
         }
 
-        $$dadosToken = TokenHelper::validar($_SESSION['token']);
+        $dadosToken = TokenHelper::validar($_SESSION['token']);
 
         if (!$dadosToken) {
             session_destroy();
