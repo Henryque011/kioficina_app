@@ -567,6 +567,12 @@ h2 {
                 border-radius: 10px;
                 display: flex;
                 flex-direction: column;
+
+                label {
+                    width: 95%;
+                    font-family: var(--pace);
+                    margin-top: 20px;
+                }
             }
         }
     }
