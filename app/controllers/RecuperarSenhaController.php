@@ -3,13 +3,13 @@
 class RecuperarSenhaController extends Controller
 {
     // Esqueci a senha
-    public function esqueciSenha()
-    {
-        $dados = array();
-        $dados['titulo'] = 'Recuperar Senha - KiOficina';
+    // public function esqueciSenha()
+    // {
+    //     $dados = array();
+    //     $dados['titulo'] = 'Recuperar Senha - KiOficina';
 
-        $this->carregarViews('recuperar_senha', $dados);
-    }
+    //     $this->carregarViews('recuperar_senha', $dados);
+    // }
 
     // Recuperação da Senha (esqueceu a senha)
     public function enviarRecuperacao()
