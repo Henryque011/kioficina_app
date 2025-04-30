@@ -43,19 +43,27 @@ class ListarServicoControllerController extends Controller
         curl_close($ch);
 
         if ($statusCode != 200) {
-            echo "Erro ao buscar as ordens de serviço  na API.\n
-            Código HTTP: $statusCode";
+            echo "Erro ao buscar as ordens de serviço na API.\n";
+            echo "Código HTTP: $statusCode";
             exit;
         }
-
-        //separar os dados em 'campos'
+        
+        // Separa os dados em 'campos'
         $ordemServico = json_decode($response, true);
-
+        
+        // Garante que seja um array de serviços válidos
+        $servicos = [];
+        
+        // Se for um array de múltiplos serviços (cada um com status_ordem, etc.)
+        if (is_array($ordemServico) && isset($ordemServico[0]) && is_array($ordemServico[0])) {
+            $servicos = $ordemServico;
+        }
+        
         $dados = array();
-        $dados['titulo'] = 'kiOficina - listar_servico';
-
-        $dados['servicos'] = $ordemServico;
-
-        $this->carregarViews('lsitar_servico', $dados);
+        $dados['titulo'] = 'KiOficina - Listar Serviço';
+        $dados['servicos'] = $servicos;
+        
+        $this->carregarViews('listar_servicos', $dados);
+        
     }
 }
