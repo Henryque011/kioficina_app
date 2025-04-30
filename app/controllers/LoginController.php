@@ -18,6 +18,10 @@ class LoginController extends Controller
     //metodo de autenticação
     public function autenticar()
     {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        
         $email = $_POST['email'] ?? null;
         $senha = $_POST['senha'] ?? null;
 
