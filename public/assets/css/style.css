@@ -107,6 +107,7 @@ header {
 
                 p {
                     a {
+                        color: var(--yellow);
                         margin: 10px 0 0 10px;
                         text-decoration: none;
                     }
