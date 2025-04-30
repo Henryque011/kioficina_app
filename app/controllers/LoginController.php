@@ -3,7 +3,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-
 class LoginController extends Controller
 {
     public function index()
@@ -73,7 +72,7 @@ class LoginController extends Controller
         $dados = array();
         $dados['titulo'] = 'Recuperar Senha - KiOficina';
 
-        $this->carregarViews('recuperar_senha', $dados);
+        $this->carregarViews('esqueci_senha', $dados);
     }
 
     // Recuperação da Senha (esqueceu a senha)
