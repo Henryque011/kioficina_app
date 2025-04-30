@@ -1,6 +1,7 @@
 <?php
 
-require_once('../../config/config.php');
+require_once(__DIR__ . '/../../config/config.php');
+
 $titulo = 'Menu Principal - ki-oficina';
 ?>
 
@@ -8,7 +9,8 @@ $titulo = 'Menu Principal - ki-oficina';
 <html lang="pt-br">
 
 <?php
-require_once('app/views/template/head.php')
+require_once(__DIR__ . '/template/head.php');
+
 ?>
 
 
