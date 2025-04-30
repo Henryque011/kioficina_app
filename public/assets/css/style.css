@@ -107,7 +107,8 @@ header {
 
                 p {
                     a {
-                        color: var(--yellow);
+                        color: black;
+                        font-weight: 350;
                         margin: 10px 0 0 10px;
                         text-decoration: none;
                     }
@@ -540,6 +541,32 @@ h2 {
                 text-decoration: none;
                 color: white;
                 letter-spacing: 2px;
+            }
+        }
+    }
+}
+
+.esqueci_senha {
+    .site {
+        h2 {
+            margin-top: 50px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+
+            form {
+                width:100%;
+                height: 150px;
+                background-color: white;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
             }
         }
     }
