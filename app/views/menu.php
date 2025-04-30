@@ -16,7 +16,7 @@ require_once(__DIR__ . '/template/head.php');
 
 <body>
     <header>
-        <a href="index.php"><img src="public/assets/img/logo-kioficina.png" alt="logo-kioficina"></a>
+        <a href="index.php"><img src="<?php echo BASE_URL; ?>assets/img/logo-kioficina.png" alt="logo-kioficina"></a>
     </header>
 
     <section class="menu">
