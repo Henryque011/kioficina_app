@@ -15,13 +15,12 @@ require_once(__DIR__ . '/template/head.php');
                     <label for="email">E-mail cadastrado:</label>
                     <input type="email" name="email" id="email" required>
 
-                    <input type="submit" value="Enviar link de recuperação">
+                    <input type="submit" value="Enviar link" class="btn-link">
                 </form>
-
+                <p><a href="<?php echo BASE_URL; ?>inde.php?url=login/login">voltar ao login</a></p>
             </div>
         </article>
     </section>
-
 </body>
 
 </html>
