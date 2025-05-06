@@ -599,8 +599,6 @@ h2 {
         display: flex;
         justify-content: center;
         text-decoration: none;
-        align-items: center;
-        text-align: center;
 
         a {
             text-decoration: none;
@@ -609,10 +607,11 @@ h2 {
             margin-top: 20px;
             background-color: var(--gold);
             width: 70%;
-            height: 50px;
-            border-radius: 10px;
+            height: 30px;
+            border-radius: 5px;
             align-items: center;
             text-align: center;
+            padding: 5px;
         }
     }
 }
