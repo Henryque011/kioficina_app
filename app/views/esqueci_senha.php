@@ -17,8 +17,9 @@ require_once(__DIR__ . '/template/head.php');
 
                     <input type="submit" value="Enviar link" class="btn-link">
                 </form>
-                <p><a href="<?php echo BASE_URL; ?>inde.php?url=login/login">voltar ao login</a></p>
             </div>
+            <p><a href="<?php echo BASE_URL; ?>inde.php?url=login/login">voltar ao login</a></p>
+
         </article>
     </section>
 </body>
