@@ -104,10 +104,17 @@ class LoginController extends Controller
         $data = json_decode($response, true);
 
         if ($statusCode == 200) {
-            $_SESSION['flash'] = $data['mensagem'] ?? 'Verifique seu e-mail para continuar.';
+            $_SESSION['flash'] = [
+                'tipo' => 'sucesso',
+                'mensagem' => $data['mensagem'] ?? 'Verifique seu e-mail para continuar.'
+            ];
         } else {
-            $_SESSION['flash'] = $data['erro'] ?? 'Erro ao solicitar redefinição.';
+            $_SESSION['flash'] = [
+                'tipo' => 'erro',
+                'mensagem' => $data['erro'] ?? 'Erro ao solicitar redefinição.'
+            ];
         }
+        
 
         header("Location: " . BASE_URL . "index.php?url=login/esqueciSenha");
         exit;
