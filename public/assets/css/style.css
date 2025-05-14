@@ -447,12 +447,29 @@ h2 {
                         cursor: pointer;
                         color: gray;
                         transition: 0.3s;
+                    }
 
-                        &:hover,
-                        &:hover~label,
-                        input:checked~label {
-                            color: var(--gold);
-                        }
+
+                    label:hover,
+                    label:hover~label {
+                        color: gray;
+                    }
+
+                    label:hover {
+                        color: var(--gold);
+                    }
+
+                    label:hover~label {
+                        color: gray;
+                    }
+
+                    input:checked~label {
+                        color: gray;
+                    }
+
+                    input:checked+label,
+                    input:checked+label~label {
+                        color: var(--gold);
                     }
                 }
 
@@ -460,17 +477,15 @@ h2 {
                     margin-top: 10px;
                     padding: 10px;
                     background-color: var(--gold);
-                    color: #000;
+                    color: white;
+                    text-transform: uppercase;
                     font-weight: bold;
-                    font-family: var(--sofast);
+                    font-family: var(--pace);
                     border: none;
                     border-radius: 6px;
                     cursor: pointer;
                     transition: background-color 0.3s;
 
-                    &:hover {
-                        background-color: var(--yellow);
-                    }
                 }
             }
         }
@@ -482,7 +497,9 @@ h2 {
             font-family: var(--sofast);
             font-weight: bold;
             font-size: 14pt;
-            color: #000;
+            font-family: var(--pace);
+            color: white;
+            text-transform: uppercase;
             background-color: var(--gold);
             border-radius: 6px;
             transition: background-color 0.3s;
