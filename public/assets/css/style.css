@@ -427,6 +427,13 @@ h2 {
                     border-radius: 8px;
                     border: 1px solid #ccc;
                     font-family: var(--pace);
+                    text-decoration: dashed;
+                }
+
+                textarea:focus {
+                    outline: none;
+                    border-color: var(--gold);
+                    box-shadow: 0 0 8px var(--gold);
                 }
 
                 label {
@@ -436,7 +443,8 @@ h2 {
                 .stars {
                     display: flex;
                     justify-content: center;
-                    gap: 5px;
+                    gap: 10px;
+                    flex-direction: row-reverse;
 
                     input[type="radio"] {
                         display: none;
@@ -448,7 +456,6 @@ h2 {
                         color: gray;
                         transition: 0.3s;
                     }
-
 
                     label:hover,
                     label:hover~label {
@@ -485,7 +492,6 @@ h2 {
                     border-radius: 6px;
                     cursor: pointer;
                     transition: background-color 0.3s;
-
                 }
             }
         }
