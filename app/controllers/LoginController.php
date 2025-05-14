@@ -114,7 +114,6 @@ class LoginController extends Controller
                 'mensagem' => $data['erro'] ?? 'Erro ao solicitar redefinição.'
             ];
         }
-        
 
         header("Location: " . BASE_URL . "index.php?url=login/esqueciSenha");
         exit;
