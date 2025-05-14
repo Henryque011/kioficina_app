@@ -68,6 +68,9 @@ if (!empty($agendamentos) && is_array($agendamentos)) {
                     <button type="submit" class="btn btn-agendar">Agendar </button>
                 </form>
             </div>
+            <div class="conteiner">
+                <a href="<?= BASE_URL ?>index.php?url=menu" class="btn-voltar">VOLTAR</a>
+            </div>
         </article>
     </section>
 
