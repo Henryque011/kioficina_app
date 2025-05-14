@@ -70,6 +70,25 @@ header {
     }
 }
 
+.btn-voltar {
+    margin-top: 16px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: var(--sofast);
+    font-weight: bold;
+    font-size: 14pt;
+    font-family: var(--pace);
+    color: white;
+    text-transform: uppercase;
+    background-color: var(--gold);
+    border-radius: 6px;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: var(--gold);
+    }
+}
+
 .login {
     .site {
         display: flex;
@@ -225,19 +244,28 @@ h2 {
             text-align: center;
             font-family: var(--pace);
             font-size: 12pt;
-        }
 
-        .form-label {
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+            .form-label {
+                font-weight: bold;
+                text-transform: uppercase;
+            }
 
-        .btn-agendar {
-            background-color: var(--gold);
-            color: #FFFFFF;
-            font-weight: bold;
-            text-transform: uppercase;
-            border: none;
+            .btn-agendar {
+                background-color: var(--gold);
+                color: #FFFFFF;
+                font-weight: bold;
+                text-transform: uppercase;
+                border: none;
+            }
+
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+
+                .btn-voltar {}
+            }
         }
     }
 }
@@ -499,25 +527,6 @@ h2 {
                     cursor: pointer;
                     transition: background-color 0.3s;
                 }
-            }
-        }
-
-        .btn-voltar {
-            margin-top: 16px;
-            padding: 8px 16px;
-            text-decoration: none;
-            font-family: var(--sofast);
-            font-weight: bold;
-            font-size: 14pt;
-            font-family: var(--pace);
-            color: white;
-            text-transform: uppercase;
-            background-color: var(--gold);
-            border-radius: 6px;
-            transition: background-color 0.3s;
-
-            &:hover {
-                background-color: var(--gold);
             }
         }
     }
