@@ -3,7 +3,6 @@
 
 <?php
 require_once(__DIR__ . '/template/head.php');
-
 ?>
 
 <body>
@@ -26,7 +25,6 @@ require_once(__DIR__ . '/template/head.php');
 
                     <input type="submit" value="Enviar link" class="btn-link">
                 </form>
-
 
             </div>
             <p><a href="<?php echo BASE_URL; ?>index.php?url=login/">voltar ao login</a></p>
