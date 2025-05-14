@@ -19,13 +19,11 @@ require_once('template/head.php')
                     <label>Nota:</label>
                     <div class="stars">
                         <div class="stars">
-
                             <input type="radio" name="nota" id="star5" value="5"><label for="star5">★</label>
                             <input type="radio" name="nota" id="star4" value="4"><label for="star4">★</label>
                             <input type="radio" name="nota" id="star3" value="3"><label for="star3">★</label>
                             <input type="radio" name="nota" id="star2" value="2"><label for="star2">★</label>
                             <input type="radio" name="nota" id="star1" value="1" required><label for="star1">★</label>
-
                         </div>
                     </div>
 
@@ -36,7 +34,6 @@ require_once('template/head.php')
             <a href="<?= BASE_URL ?>index.php?url=menu" class="btn-voltar">VOLTAR</a>
         </article>
     </section>
-
 
     <script>
         function rate(stars) {
