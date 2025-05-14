@@ -346,8 +346,8 @@ class ApiController extends Controller
             $mail->Username   = EMAIL_USER;
             $mail->Password   = EMAIL_PASS;
 
-            $mail->CharSet = 'UTF-8';           
-            $mail->Encoding = 'base64';    
+            $mail->CharSet = 'UTF-8';
+            $mail->Encoding = 'base64';
 
             $mail->setFrom(EMAIL_USER, 'Ki Oficina');
             $mail->addAddress($cliente['email_cliente'], $cliente['nome_cliente']);
@@ -419,4 +419,54 @@ class ApiController extends Controller
             $dados['erro'] = 'Erro ao atualizar a senha';
             $this->carregarViews('home', $dados);
         }
+    }
+
+    public function NovoDepoimento()
+    {
+        // Autenticação via token
+        $cliente = $this->autenticarToken();
+
+        // ID do cliente do token
+        if (!$cliente) {
+            http_response_code(401);
+            echo json_encode(['erro' => 'Token inválido ou ausente.']);
+            return;
+        }
+
+        // ID do cliente via POST
+        $id_cliente = $cliente['id_cliente'];
+
+        // Coleta os demais dados do POST
+        $descricao = $_POST['descricao_depoimento'] ?? null;
+        $nota = $_POST['nota_depoimento'] ?? null;
+
+        $datahora = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+        $datahora = $datahora->format('Y-m-d H:i:s');
+
+        $status = "Em análise";
+
+        // Validação simples (opcional, mas útil)
+        if (!$descricao || !$nota) {
+            http_response_code(400);
+            echo json_encode(['erro' => 'Descrição e nota são obrigatórias.']);
+            return;
+        }
+
+        // Monta array para o model
+        $dados = [
+            ':id_cliente'           => $id_cliente,
+            ':descricao_depoimento' => $descricao,
+            ':nota_depoimento'      => $nota,
+            ':datahora_depoimento'  => $datahora,
+            ':status_depoimento'    => $status
+        ];
+
+        // Insere depoimento
+        $resultado = $this->depoimentoModel->addDepoimento($dados);
+
+        // Retorna resposta
+        header('Content-Type: application/json');
+        echo json_encode(['sucesso' => $resultado]);
+        exit;
+    }
 }
