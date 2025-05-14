@@ -1,37 +1,38 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <?php
-require_once('app/views/template/head.php')
+require_once('template/head.php')
 ?>
 
 <body>
     <section class="depoimento">
         <article class="site">
             <h2>Deixe seu depoimento</h2>
+
             <div class="container">
-                <div class="mb-3 text-start">
-                    <label class="form-label fw-bold">Seu depoimento:</label>
-                    <textarea class="form-control" rows="3"></textarea>
-                </div>
-                <div class="mb-3 text-start">
-                    <label class="form-label fw-bold">Nota:</label>
+                <form method="POST" action="<?= BASE_URL ?>index.php?url=depoimento/enviarDepoimento">
+
+                    <label for="descricao" class="descricao">Seu Depoimento:</label>
+                    <textarea name="descricao" id="descricao" rows="4" required></textarea>
+
+                    <label>Nota:</label>
                     <div class="stars">
-                        <i class="fas fa-star" onclick="rate(1)"></i>
-                        <i class="fas fa-star" onclick="rate(2)"></i>
-                        <i class="fas fa-star" onclick="rate(3)"></i>
-                        <i class="fas fa-star" onclick="rate(4)"></i>
-                        <i class="fas fa-star" onclick="rate(5)"></i>
+                        <input type="radio" name="nota" id="star5" value="5"><label for="star5">★</label>
+                        <input type="radio" name="nota" id="star4" value="4"><label for="star4">★</label>
+                        <input type="radio" name="nota" id="star3" value="3"><label for="star3">★</label>
+                        <input type="radio" name="nota" id="star2" value="2"><label for="star2">★</label>
+                        <input type="radio" name="nota" id="star1" value="1" required><label for="star1">★</label>
                     </div>
-                </div>
-                <button class="btn btn-custom w-100">Enviar Depoimento</button>
+
+                    <button type="submit" class="btn-custom">Enviar Depoimento</button>
+                </form>
             </div>
-            <button class="button-servico"><a href="<?php echo BASE_URL; ?>index.php?url=menu">VOLTAR</a></button>
-            <!-- <button class="btn_cust">Voltar</button> -->
+
+            <a href="<?= BASE_URL ?>index.php?url=menu" class="btn-voltar">VOLTAR</a>
         </article>
     </section>
+
 
     <script>
         function rate(stars) {
