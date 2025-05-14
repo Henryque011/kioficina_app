@@ -43,6 +43,25 @@ require_once(__DIR__ . '/template/head.php');
         </article>
     </section>
 
+    <?php if (isset($_SESSION['mensagem'])): ?>
+        <div id="mensagem-sucesso" class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= $_SESSION['mensagem'] ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+        <?php unset($_SESSION['mensagem']); ?>
+    <?php endif; ?>
+
+    <script>
+        setTimeout(function() {
+            var msg = document.getElementById('mensagem-sucesso');
+            if (msg) {
+                msg.classList.remove('show'); 
+                msg.classList.add('fade'); 
+                setTimeout(() => msg.remove(), 500); 
+            }
+        }, 4000);
+    </script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
