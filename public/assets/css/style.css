@@ -257,15 +257,6 @@ h2 {
                 text-transform: uppercase;
                 border: none;
             }
-
-            .container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-
-                .btn-voltar {}
-            }
         }
     }
 }
