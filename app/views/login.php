@@ -25,7 +25,7 @@ require_once('template/head.php')
                             <label for="exampleInputPassword1">senha:</label>
                             <input type="password" class="form-control" id="senha" name="senha" required placeholder="">
                         </div>
-                        <p><a href="<?php echo BASE_URL; ?>index.php?url=login/esqueciSenha">Esqueci a Senha</a></p>
+                        <p><a href="<?php echo BASE_URL; ?>index.php?url=login/esqueciSenha">Esqueci a Senha<i class="fa-solid fa-key"></i></a></p>
                         <div class="form-button">
                             <button type="submit" class="btn btn-primary">Entrar</button>
                         </div>
