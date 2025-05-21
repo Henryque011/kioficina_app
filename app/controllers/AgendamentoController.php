@@ -4,73 +4,122 @@ class AgendamentoController extends Controller
 {
     public function index()
     {
-        try {
-            // Verifica se o token está presente na sessão
-            if (empty($_SESSION['token'])) {
-                $this->redirecionarParaLogin();
-            }
+        if (!isset($_SESSION['token'])) {
+            header("location: " . BASE_URL . "index.php?url=login");
+            exit;
+        }
 
-            // Valida o token
-            $dadoToken = TokenHelper::validar($_SESSION['token']);
-            if (!$dadoToken) {
-                $this->encerrarSessaoERedirecionar();
-            }
+        $dadoToken = TokenHelper::validar($_SESSION['token']);
 
-            // Monta a URL da API para buscar agendamentos
-            $url = BASE_API . "agendamentosPorCliente/" . $dadoToken['id'];
+        if (!$dadoToken) {
+            session_destroy();
+            unset($_SESSION['token']);
+            header("location: " . BASE_URL . "index.php?url=login");
+            exit;
+        }
 
-            // Configura cURL
-            $ch = curl_init($url);
-            curl_setopt_array($ch, [
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_HTTPHEADER => [
-                    'Authorization: Bearer ' . $_SESSION['token']
-                ]
-            ]);
+        //buscar ordens de serviço na API
+        $urlVeiculos = BASE_API . "veiculo/" . $dadoToken['id'];
 
-            // Executa a requisição
-            $response = curl_exec($ch);
+        //Reconnhecemento da chave(inicializa um sessãqo cURL)
+        $chVeiculos = curl_init($urlVeiculos);
 
-            $statusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            curl_close($ch);
+        //Define que o conteudo venha com string
+        curl_setopt($chVeiculos, CURLOPT_RETURNTRANSFER, true);
 
-            // Verifica status HTTP da resposta
-            if ($statusCode !== 200) {
-                throw new Exception("Erro ao buscar agendamentos. Código HTTP: $statusCode");
-            }
+        curl_setopt($chVeiculos, CURLOPT_HTTPHEADER, [
+            'AUTHORIZATION: Bearer ' . $_SESSION['token']
+        ]);
 
-            // Decodifica JSON retornado
-            $ordensAgendamento = json_decode($response, true);
+        //Recebe os dados dessa solicitação
+        $responseVeiculos = curl_exec($chVeiculos);
 
-            // Verifica se o JSON é válido
-            if (!is_array($ordensAgendamento)) {
-                throw new Exception("Resposta inválida da API.");
-            }
+        //Obtem o coidigo HTTP da resposta (200, 400, 401)
+        $statusCodeVeiculos = curl_getinfo($chVeiculos, CURLINFO_HTTP_CODE);
 
-            // Prepara dados para a view
-            $dados = [
-                'titulo' => 'Kioficina - Agendamento',
-                'agendamentos' => $ordensAgendamento
+        //Encerrar a sessaão cURL
+        curl_close($chVeiculos);
+
+        if ($statusCodeVeiculos != 200) {
+            echo "Erro ao buscar as ordens de veiculos na API.\n";
+            echo "Código HTTP: $statusCodeVeiculos";
+            exit;
+        }
+
+        $Veiculos = json_decode($responseVeiculos, true);
+
+        // listar os funcionarios
+
+        //buscar ordens de serviço na API
+        $urlFuncionarios = BASE_API . "veiculo/" . "listarFunc";
+
+        //Reconnhecemento da chave(inicializa um sessãqo cURL)
+        $chFuncionarios = curl_init($urlFuncionarios);
+
+        //Define que o conteudo venha com string
+        curl_setopt($chFuncionarios, CURLOPT_RETURNTRANSFER, true);
+
+        curl_setopt($chFuncionarios, CURLOPT_HTTPHEADER, [
+            'AUTHORIZATION: Bearer ' . $_SESSION['token']
+        ]);
+
+        //Recebe os dados dessa solicitação
+        $responseFuncionarios = curl_exec($chFuncionarios);
+
+        //Obtem o coidigo HTTP da resposta (200, 400, 401)
+        $statusCodeFuncionarios = curl_getinfo($chFuncionarios, CURLINFO_HTTP_CODE);
+
+        //Encerrar a sessaão cURL
+        curl_close($chFuncionarios);
+
+        if ($statusCodeFuncionarios != 200) {
+            echo "Erro ao buscar as ordens de Funcionarios na API.\n";
+            echo "Código HTTP: $statusFuncionarios";
+            exit;
+        }
+
+        $uncionarios = json_decode($responseVeiculos, true);
+        // listar os veiculos do cliente
+
+        // agendaemento analisando o metodo post
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $data = $_POST['data_agenda'];
+            $hora = $_POST['hora_agenda'];
+            $dataAgenadamento = $data . ' ' . $hora;
+
+            $dataAgenadamento = [
+                'id_veiculo' => $_POST['id_veiculo'],
+                'id_funcionario' => $_POST['id_funcionario'],
+                'data_Agendamento' => $dataAgendamento
             ];
 
-            // Carrega a view com os dados
-            $this->carregarViews('agendamento', $dados);
-        } catch (Exception $e) {
-            echo "<p><strong>Erro:</strong> " . htmlspecialchars($e->getMessage()) . "</p>";
-            // Opcional: registrar o erro em log
+            $urlAgendar = BASE_API . "criarAgendamento";
+            $chAgenda = curl_init($urlAgendar);
+
+            curl_setopt($chAgenda, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($chAgenda, CURLOPT_POSTFIELDS, json_encode($dadosAgendamento));
+            curl_setopt($chAgenda, CURLOPT_HTTPHEADER, [
+                'AUTHORIZATION: Bearer ' . $_SESSION['token'],
+                'Content-Type: application/json'
+            ]);
+
+            $resposta = curl_exec($chAgenda);
+            $statusCodeAgenda = curl_getinfo($chAgenda, CURLINFO_HTTP_CODE);
+            curl_close($chAgenda);
+
+            if($statusCodeAgenda === 200){
+                $_SESSION['msg_sucess'] = 'Agendamento realizado como sucesso!';
+                header("location: " . BASE_URL . "index.php?url=agendamento");
+                exit;
+            }else{
+                $_SESSION['msg_erro'] = "Erro ao agendar. Código: $statusCodeAgenda";
+            }
         }
-    }
 
-    private function redirecionarParaLogin()
-    {
-        header("Location: " . BASE_URL . "index.php?url=login");
-        exit;
-    }
-
-    private function encerrarSessaoERedirecionar()
-    {
-        session_destroy();
-        unset($_SESSION['token']);
-        $this->redirecionarParaLogin();
+        $dados = array();
+        $dados['titulo'] = 'Kioficina - Agendamento';
+        $dados['veiculos'] = $Veiculos;
+        $dados['funcionarios'] = $funcioanrios;
+        $this->carregarViews('agendamento', $dados);
     }
 }
