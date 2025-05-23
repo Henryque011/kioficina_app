@@ -59,13 +59,18 @@ require_once('template/head.php')
                     </div>
 
                     <div>
-                        <input type="submit" value="Agendar">
+                        <input type="submit" value="Agendar" class="btn-agenda"">
                     </div>
                 </form>
             </div>
-            <div class="conteiner" style="display: flex; justify-content: center; text-align: center; text-align: center;">
-                <a href="<?= BASE_URL ?>index.php?url=menu" class="btn-voltar">VOLTAR</a>
-            </div>
+            <div class=" box" style="display: flex; justify-content: center; text-align: center; text-align: center;">
+                        <a href="<?= BASE_URL ?>index.php?url=menu" class="btn-voltar">VOLTAR</a>
+                    </div>
+
+                    <div class="box" style="display: flex; justify-content: center; text-align: center; text-align: center;">
+                        <a href="<?= BASE_URL ?>index.php?url=menu" class="btn-listAgenda">listar agenda</a>
+                    </div>
+
         </article>
     </section>
 
