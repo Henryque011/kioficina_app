@@ -44,6 +44,7 @@ class Rotas
             //Definir um controlador de erro
             $controladorAtual = 'ErroController';
             $acaoAtual = 'index';
+            
         }
 
         //criar uma instância para o controlador atual
