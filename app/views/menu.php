@@ -29,7 +29,7 @@ require_once(__DIR__ . '/template/head.php');
                 <a href="<?php echo BASE_URL; ?>index.php?url=agendamento"><button>agendamento</button></a>
             </div>
             <div class="box_links">
-                <a href="<?php echo BASE_URL; ?>index.php?url=listar_servico"><button>listar serviço</button></a>
+                <a href="<?php echo BASE_URL; ?>index.php?url=listarServico"><button>listar serviço</button></a>
             </div>
             <div class="box_links">
                 <a href="<?php echo BASE_URL; ?>index.php?url=depoimento"><button>Depoimentos</button></a>
