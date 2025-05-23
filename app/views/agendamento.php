@@ -6,10 +6,23 @@ require_once('template/head.php')
 ?>
 
 
-
 <body>
     <section class="agendamento">
         <article class="site">
+            <?php if (!empty($_SESSION['msg_sucess'])): ?>
+                <div class="alert alert-success">
+                    <?= $_SESSION['msg_sucess'] ?>
+                </div>
+                <?php unset($_SESSION['msg_sucess']); ?>
+            <?php endif; ?>
+
+            <?php if (!empty($_SESSION['msg_erro'])): ?>
+                <div class="alert alert-danger">
+                    <?= $_SESSION['msg_erro'] ?>
+                </div>
+                <?php unset($_SESSION['msg_erro']); ?>
+            <?php endif; ?>
+
             <div class="space"></div>
             <h2>faça seu agendamento</h2>
 
@@ -75,23 +88,16 @@ require_once('template/head.php')
         </article>
     </section>
 
-    <?php
-    if (!empty($agendamentos) && is_array($agendamentos)) {
-        foreach ($agendamentos as $agendamento) {
-            $statusClass = '';
-            switch ($agendamento['status_agendamento']) {
-                case 'Em análise':
-                    $statusClass = 'status-analise';
-                    break;
-                case 'Cancelado':
-                    $statusClass = 'status-cancelado';
-                    break;
-                case 'Concluído':
-                    $statusClass = 'status-concluido';
-                    break;
+    <script>
+        setTimeout(function() {
+            const alertBox = document.getElementById('msg-alert');
+            if (alertBox) {
+                alertBox.style.transition = "opacity 0.5s ease";
+                alertBox.style.opacity = 0;
+                setTimeout(() => alertBox.remove(), 500);
             }
-        }
-    } ?>
+        }, 5000);
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
