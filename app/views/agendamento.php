@@ -82,7 +82,7 @@ require_once('template/head.php')
                     </div>
 
                     <div class="box" style="display: flex; justify-content: center; text-align: center; text-align: center;">
-                        <a href="<?= BASE_URL ?>" class="btn-listAgenda">listar agenda</a>
+                        <a href="" class="btn-listAgenda">listar agenda</a>
                     </div>
 
         </article>
