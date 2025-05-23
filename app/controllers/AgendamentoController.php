@@ -85,19 +85,19 @@ class AgendamentoController extends Controller
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = $_POST['data_agenda'];
             $hora = $_POST['hora_agenda'];
-            $dadosAgendamento= $data . ' ' . $hora;
+            $dadosAgendamentoStr = $data . ' ' . $hora;
 
             $dataAgendamento = [
                 'id_veiculo' => $_POST['id_veiculo'],
                 'id_funcionario' => $_POST['id_funcionario'],
-                'data_Agendamento' => $dadosAgendamento
+                'data_agendamento' => $dadosAgendamentoStr
             ];
 
             $urlAgendar = BASE_API . "criarAgendamento";
             $chAgenda = curl_init($urlAgendar);
 
             curl_setopt($chAgenda, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($chAgenda, CURLOPT_POSTFIELDS, json_encode($dadosAgendamento));
+            curl_setopt($chAgenda, CURLOPT_POSTFIELDS, json_encode($dataAgendamento)); // << CORRETO AQUI
             curl_setopt($chAgenda, CURLOPT_HTTPHEADER, [
                 'AUTHORIZATION: Bearer ' . $_SESSION['token'],
                 'Content-Type: application/json'
@@ -107,11 +107,11 @@ class AgendamentoController extends Controller
             $statusCodeAgenda = curl_getinfo($chAgenda, CURLINFO_HTTP_CODE);
             curl_close($chAgenda);
 
-            if($statusCodeAgenda === 200){
+            if ($statusCodeAgenda === 200) {
                 $_SESSION['msg_sucess'] = 'Agendamento realizado como sucesso!';
                 header("location: " . BASE_URL . "index.php?url=agendamento");
                 exit;
-            }else{
+            } else {
                 $_SESSION['msg_erro'] = "Erro ao agendar. Código: $statusCodeAgenda";
             }
         }
