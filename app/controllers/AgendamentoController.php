@@ -51,7 +51,7 @@ class AgendamentoController extends Controller
         // listar os funcionarios
 
         //buscar ordens de serviço na API
-        $urlFuncionarios = BASE_API . "veiculo/" . "listarFunc";
+        $urlFuncionarios = BASE_API . "listarFunc";
 
         //Reconnhecemento da chave(inicializa um sessãqo cURL)
         $chFuncionarios = curl_init($urlFuncionarios);
@@ -74,23 +74,23 @@ class AgendamentoController extends Controller
 
         if ($statusCodeFuncionarios != 200) {
             echo "Erro ao buscar as ordens de Funcionarios na API.\n";
-            echo "Código HTTP: $statusFuncionarios";
+            echo "Código HTTP: $statusCodeFuncionarios";
             exit;
         }
 
-        $uncionarios = json_decode($responseVeiculos, true);
+        $funcionarios = json_decode($responseFuncionarios, true);
         // listar os veiculos do cliente
 
         // agendaemento analisando o metodo post
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = $_POST['data_agenda'];
             $hora = $_POST['hora_agenda'];
-            $dataAgenadamento = $data . ' ' . $hora;
+            $dadosAgendamento= $data . ' ' . $hora;
 
-            $dataAgenadamento = [
+            $dataAgendamento = [
                 'id_veiculo' => $_POST['id_veiculo'],
                 'id_funcionario' => $_POST['id_funcionario'],
-                'data_Agendamento' => $dataAgendamento
+                'data_Agendamento' => $dadosAgendamento
             ];
 
             $urlAgendar = BASE_API . "criarAgendamento";
@@ -119,7 +119,7 @@ class AgendamentoController extends Controller
         $dados = array();
         $dados['titulo'] = 'Kioficina - Agendamento';
         $dados['veiculos'] = $Veiculos;
-        $dados['funcionarios'] = $funcioanrios;
+        $dados['funcionarios'] = $funcionarios;
         $this->carregarViews('agendamento', $dados);
     }
 }
