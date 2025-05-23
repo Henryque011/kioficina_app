@@ -50,13 +50,14 @@ require_once('template/head.php')
 
                     <div>
                         <label>Funcionário:</label>
-                        <select name="id_funcionario" id="is_funcionario" required>
+                        <select name="id_funcionario" id="id_funcionario" required>
                             <option value="">Selecione o funcionário</option>
-                            <?php foreach ($funcionarios as $funcionarios): ?>
-                                <option value="<?php $funcionario['id_funcioanrio'] ?>"><?php $funcionario['nome_funcioanrio'] ?></option>
-                            <?php endforeach ?>
+                            <?php foreach ($funcionarios as $funcionario): ?>
+                                <option value="<?= $funcionario['id_funcionario'] ?>"><?= $funcionario['nome_funcionario'] ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
+
 
                     <div>
                         <input type="submit" value="Agendar" class="btn-agenda"">
@@ -68,7 +69,7 @@ require_once('template/head.php')
                     </div>
 
                     <div class="box" style="display: flex; justify-content: center; text-align: center; text-align: center;">
-                        <a href="<?= BASE_URL ?>index.php?url=menu" class="btn-listAgenda">listar agenda</a>
+                        <a href="<?= BASE_URL ?>" class="btn-listAgenda">listar agenda</a>
                     </div>
 
         </article>
